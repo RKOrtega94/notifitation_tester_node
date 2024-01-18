@@ -3,9 +3,8 @@ const router = express.Router();
 
 const { notificationController } = require("../../controllers/index");
 
-// send notification
-router.post("/send", (req, res) => {
-  res.json({ message: "Send notification" });
-});
+router.post("/send", (req, res) =>
+  notificationController.sendNotification(req, res)
+);
 
 module.exports = router;
